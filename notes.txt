@@ -1,0 +1,106 @@
+###################################################################################################
+# Week_01 - Numbers. Recursion
+###################################################################################################
+
+[ ] Introduce GitHub repository.
+[ ] Because 03.03 is a holiday we'll move the next session to 01.03 (Wednesday), room 500, 17:00.
+   The room does not have computers.
+[ ] Make a chat in Facebook with the name FP_IS_22-23.
+
+
+- VEEERY whitespace sensitive, i.e. tabs, spaces, new lines matter (a lot)
+- comments:
+   - use -- for single line comments
+   - use {--} for multiline comments
+   - only for human-readable text!
+- everything is a function here!
+   - read the following: a = 5 (a :: Int)
+   - a++, ++a <- invalid. Use (a + 1)
+- use camel case to name identifiers, i.e. myFunction
+- #include ... (C++) -> import ... (Haskell)
+- when passing negative numbers as parameters surround them in brackets
+   - example: helper (-1)
+
+
+Types
+ ❗Important: 1. All types start with a capital letter!
+              2. All types must be known at compile time! (strongly typed language; not the dynamic programming principles)
+              3. If f returns Int, then f cannot return Double! (statically typed language)
+
+ - Bool     -> True False
+
+ - Int      -> whole numbers;          uses 32 bits                (ex. 1, 10, 153)
+ - Integer  -> whole numbers;          unbounded                   (ex. 123456789123456789123456798)
+
+ - Float    -> floating-point numbers; equivalent to float in C++  (ex. 1.52)
+ - Double   -> floating-point numbers; equivalent to double in C++ (ex. 1.5252525252525252525252525252)
+ - Rational -> floating-point numbers; unbounded
+
+ - Char     -> equivalent to char                        in C++ (ex. 'a', '1', 'C', '\n')
+ - String   -> equivalent to std::string and const char* in C++ (ex. "Haskell")
+
+
+Built-in Functions
+ - boolean logical operators: && || not
+
+ - arithmetic:  +, -, * (Only for variables of the same type, i.e. n * m will give an error if n is Int and m - Double)
+ 
+ - division:
+    - for whole numbers:
+        - quotient: div (ex. div 10 5 == 2; div 123 10 == 12)
+        - remainder: mod (ex. mod 10 5 == 0; mod 123 10 == 3) (equivalent to % in C++)
+    - real numbers:
+        - use only "/" (equivalent to "/" in C++, but here it cannot be used for whole numbers)
+ 
+ - power:
+    - use n ^ m  when m is a natural number (i.e. m > 0) (ex. 2 ^ 3 == 8)
+    - use n ** m when m is a floating-point number (ex. 2 ** 0.5 == 1.4142135623730951)
+ 
+ - other: min, max, odd, even, gcd, abs, sqrt (sqrt 2 == 1.4142135623730951; sqrt :: Double -> Double)
+
+ - ❗❗❗ Int -> Double: fromIntegral           (ex. if a is 5, then (fromIntegral a) is 5.0 ) ❗❗❗
+ - ❗❗❗ Double -> Int: ceiling, floor, round  (ex. round 5.45 == 5)                          ❗❗❗
+ - ❗❗❗      != (C++) => /= (Haskell)         (ex. 5 /= 5 == False; True /= False == True)   ❗❗❗
+
+
+ - The "Hello world" function:
+
+    ($) - read this function as "after"; accepts a function as a left parameter and an expression as a right side.
+    First it evaluates the expression.
+    Then it passes the result to the function.
+
+        print             $       "Hello world"
+          ^               ^              ^
+         / \             / \            / \
+        /   \           /   \          /   \
+          |               |              |
+          |               |              |
+          |               |              |
+          |               |              |
+       identifier      identifier       a string
+       of a function   of a function
+
+
+What is a predicate?
+   ???
+
+
+Conditions:
+   if ... then ... else
+   guards. Often denoted by the pipe symbol (|). The equivalent of a switch case in C++.
+      ❗Prefer guards to if-then-else statements ❗
+
+
+Types of Evaluation Processes
+
+   Linearly Recursive:
+      1. The result is stored in a recursive tail.
+
+      2. The recursive call is part of an expression.
+
+   Linearly Iterative:
+      1.The result is stored as a variable that is set by ANOTHER function.
+      Often the variable is named "result" and the function - "helper".
+      
+      2. The recursive call is not part of an expression.
+      These processes are faster than the linearly recursive ones!
