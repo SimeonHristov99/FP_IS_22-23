@@ -34,7 +34,7 @@ print $ divWhole 154 17 == 9.058823529411764
 print $ removeLastDigit 154 == 15    
 
 print $ divReal 154.451 10.01 == 15.42967032967033
-print $ quotientReal 154.21 17.17 == 9
+print $ quotientReal 154.21 17.17 == 8
 
 print $ avgWhole 5 1542 == 773.5
 
@@ -49,7 +49,7 @@ Define a predicates that check:
 - whether two numbers are not equal:
   - **in one line without** using if-else;
   - using guards.
-- whether a whole number *x* is between two whole numbers - *a* and *b* **in one line without** using if-else.
+- whether a whole number *x* is between two whole numbers - *start* and *finish* **in one line without** using if-else.
 
 Test cases:
 
@@ -60,7 +60,7 @@ print $ areNotEqualOneLine 5 5 == False
 print $ areNotEqualGuards 5 2 == True
 print $ areNotEqualGuards 5 5 == False
 
-print $ inside 1 5 4 == True -- a = 1, b = 5, x = 4
+print $ inside 1 5 4 == True -- start = 1, finish = 5, x = 4
 print $ inside 5 1 4 == True
 print $ inside 10 50 20 == True
 print $ inside 10 50 1 == False

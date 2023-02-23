@@ -2,11 +2,16 @@
 # Week_01 - Numbers. Recursion
 ###################################################################################################
 
-[ ] Introduce GitHub repository.
+[ ] Assume the day and time will not change.
 [ ] Because 03.03 is a holiday we'll move the next session to 01.03 (Wednesday), room 500, 17:00.
-   The room does not have computers.
+   - The room does not have computers.
 [ ] Make a chat in Facebook with the name FP_IS_22-23.
-
+[ ] Introduce ^_^ Mihi ^_^ !
+[ ] Introduce ForHome.
+   - will add Mihi to our email thread when giving feedback for week 1;
+      - ❗SEND EMAIL WITH "Reply ALL" option❗
+[ ] Introduce GitHub repository.
+[ ] File > Autosave.
 
 - VEEERY whitespace sensitive, i.e. tabs, spaces, new lines matter (a lot)
 - comments:
