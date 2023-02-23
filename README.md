@@ -14,7 +14,7 @@
 - check whitespace (space, tab, etc.)
 - remove/comment out declaration
 - new algorithm
-- write an email to Simo
+- write an email to Mihi and Simo
 
 ## Additional links
 
