@@ -2,16 +2,16 @@
 # Week_01 - Numbers. Recursion
 ###################################################################################################
 
-[ ] Assume the day and time will not change.
-[ ] Because 03.03 is a holiday we'll move the next session to 01.03 (Wednesday), room 500, 17:00.
+[X] Assume the day and time will not change.
+[X] Because 03.03 is a holiday we'll move the next session to 01.03 (Wednesday), room 500, 17:00.
    - The room does not have computers.
-[ ] Make a chat in Facebook with the name FP_IS_22-23.
-[ ] Introduce ^_^ Mihi ^_^ !
-[ ] Introduce ForHome.
+[X] Make a chat in Facebook with the name FP_IS_22-23.
+[X] Introduce ^_^ Mihi ^_^ !
+[X] Introduce ForHome.
    - will add Mihi to our email thread when giving feedback for week 1;
       - ❗SEND EMAIL WITH "Reply ALL" option❗
-[ ] Introduce GitHub repository.
-[ ] File > Autosave.
+[X] Introduce GitHub repository.
+[X] File > Autosave.
 
 - VEEERY whitespace sensitive, i.e. tabs, spaces, new lines matter (a lot)
 - comments:
@@ -64,7 +64,7 @@ Built-in Functions
  - other: min, max, odd, even, gcd, abs, sqrt (sqrt 2 == 1.4142135623730951; sqrt :: Double -> Double)
 
  - ❗❗❗ Int -> Double: fromIntegral           (ex. if a is 5, then (fromIntegral a) is 5.0 ) ❗❗❗
- - ❗❗❗ Double -> Int: ceiling, floor, round  (ex. round 5.45 == 5)                          ❗❗❗
+ - ❗❗❗ Double -> Int: ceiling, floor, round, truncate  (ex. round 5.45 == 5)                          ❗❗❗
  - ❗❗❗      != (C++) => /= (Haskell)         (ex. 5 /= 5 == False; True /= False == True)   ❗❗❗
 
 
@@ -87,11 +87,11 @@ Built-in Functions
 
 
 What is a predicate?
-   ???
+   Function that returns True or False.
 
 
 Conditions:
-   if ... then ... else
+   if ... then ... else ...
    guards. Often denoted by the pipe symbol (|). The equivalent of a switch case in C++.
       ❗Prefer guards to if-then-else statements ❗
 
@@ -104,7 +104,7 @@ Types of Evaluation Processes
       2. The recursive call is part of an expression.
 
    Linearly Iterative:
-      1.The result is stored as a variable that is set by ANOTHER function.
+      1. The result is stored as a variable that is set by ANOTHER function.
       Often the variable is named "result" and the function - "helper".
       
       2. The recursive call is not part of an expression.
