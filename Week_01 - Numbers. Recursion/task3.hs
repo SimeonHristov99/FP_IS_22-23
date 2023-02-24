@@ -28,4 +28,6 @@ factIter n
 -- > helper 5 1
 -- > helper 4 result=(5 * 1)
 -- > helper 3 result=(5 * 4 * 1)
--- > helper 3 result=(5 * 4 * 3 * 2 * 1 * 1)
+-- > helper 3 result=(5 * 4 * 3)
+-- ...
+-- > helper 0 result=(5 * 4 * 3 * 2 * 1 * 1)
