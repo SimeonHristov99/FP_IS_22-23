@@ -1,5 +1,5 @@
 ###################################################################################################
-# Week_01 - Numbers. Recursion
+# Week_01 - Numbers. Recursion (part 1)
 ###################################################################################################
 
 [X] Assume the day and time will not change.
@@ -109,3 +109,30 @@ Types of Evaluation Processes
       
       2. The recursive call is not part of an expression.
       These processes are faster than the linearly recursive ones!
+
+
+
+###################################################################################################
+# Week_02 - Recursion (part 2)
+###################################################################################################
+
+FOR HOME:
+   WARNING:
+      Getting a "Yes" does not mean getting a bonus!
+
+
+What is a declaration and what is a definition?
+   int add(const int x, const int y)       <-- ???
+   {                                       <-- ???
+      return x + y;                       <-- ???
+   }                                       <-- ???
+
+
+Closure
+   ???
+
+
+Type Inference - The Declaration Can Be Skipped
+   The The Glasgow Haskell Compiler (GHC) can "guess" (more technically "infer") the types of every function
+     - this ability is called type inference
+   fname :: [type1 -> type2 -> ... ->]returnType     <= This is not needed
