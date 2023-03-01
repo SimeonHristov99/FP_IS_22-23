@@ -79,7 +79,7 @@ A number - `n`, is perfect if and only if it is natural and equal to the sum of 
 Test cases:
 
 ```haskell
-print $ isPerfect 1 == False -- the sum of the divisors is 0, because of the hint
+print $ isPerfect 1 == False
 print $ isPerfect 6 == True -- 1 + 2 + 3 = 6 = 6
 print $ isPerfect 495 == False
 print $ isPerfect 33550336 == True
