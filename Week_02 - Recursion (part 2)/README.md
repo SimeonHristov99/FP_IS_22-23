@@ -151,6 +151,8 @@ Test cases:
 ```haskell
 print $ countOccurences 121 1 == 2
 print $ countOccurences 222 1 == 0
+print $ countOccurences 100 0 == 2
+print $ countOccurences 0 0 == 1
 ```
 
 # Task 5
@@ -241,7 +243,7 @@ print $ everyOther 4214 == 14
 
 # Task 10
 
-Define a function that takes two numbers and returns the number of palindromes between them.
+Define a function that takes two numbers and returns the number of palindromes in the open interval between them.
 
 Test cases:
 
