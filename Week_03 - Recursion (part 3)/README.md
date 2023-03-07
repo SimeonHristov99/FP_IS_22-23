@@ -177,7 +177,7 @@ print $ calcSeriesSum 1 6 == -1.0762718762718764
 
 # Task 4
 
-Define a function `(sum-divisible-numbers start finish k)` that returns the sum of all numbers from the interval [`start`, `finish`] whose digits sum up to a number that is evenly divisible by `k`.
+Define a function `sumDivisibleNumbers start finish k` that returns the sum of all numbers from the interval [`start`, `finish`] whose digits sum up to a number that is evenly divisible by `k`.
 
 > **Implementation detail**: Create a linearly recursive process.
 
