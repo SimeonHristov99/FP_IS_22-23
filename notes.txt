@@ -141,3 +141,129 @@ Type Inference - The Declaration Can Be Skipped
    The The Glasgow Haskell Compiler (GHC) can "guess" (more technically "infer") the types of every function
      - this ability is called type inference
    fname :: [type1 -> type2 -> ... ->]returnType     <= This is not needed
+
+
+
+###################################################################################################
+# Week_04 - Lists. Higher Order Functions
+###################################################################################################
+
+General
+ - you can think of them as std::vector<a>
+ - all values MUST be of ONE type
+ - [] is the empty list
+ - naming conventions:
+    - helper 5 6          <= helper x y
+    BUT
+    - helper [1, 2, 3] [] <= helper xs ys
+
+
+Constructing Lists
+ - [1, 2, 3, 4, 5, 6]
+
+ - by using cons (":") 
+    - 1 : []  => [1]
+    - 1 : [2] => [1, 2]
+    - 1 : [2, 3] => [1, 2, 3]
+    - ":" stands for "cons" (construct)
+        - The second argument MUST BE a list!!
+
+ - list comprehension. We'll see it in a bit.
+
+
+Useful built-in functions
+ - check whether a list is empty (i.e. doesn't have any contents)
+    - null xs
+    - using pattern matching (helper [] = error "Empty list")
+    - xs == [] <- Not popular, but valid
+
+ - getting the ith element of a list (analog with a train??)
+    - !!! An error will be thrown if the index is not valid !!!
+
+    - first element (the locomotive)
+        - (x:xs) => x is the first element
+        - head [1, 2, 3] => 1
+
+    - last element
+        - last [1, 2, 3, 4] => 4
+
+    - all but the last element
+        - init [1 .. 5] = [1, 2, 3, 4]
+
+    - get all the wagons of the train
+        - (x:xs) => xs is the tail
+        - tail [1, 2, 3] => [2, 3]
+        - tail [1 .. 5]  => [2, 3, 4, 5]
+
+    - the ith element
+        - xs!!5 => The element at INDEX 5 (ex. [1, 2, 3, 4, 5, 6]!!5 == 6)
+        - [1 .. 5] !! 3 = 4
+
+ - is an element in a list?
+    - elem x xs
+        - elem 1 [16, 2, 3, 4] => False
+        - elem 1 [14, 2, 1, 4] => True
+        - elem 1 [1, 2, 3, 4]  => True
+
+ - combine the elements of lists
+    - [1, 2, 3] ++ [4, 5, 6]     => [1, 2, 3, 4, 5, 6]
+    - concat [1, 2, 3] [4, 5, 6] => [1, 2, 3, 4, 5, 6]
+
+ - length [1, 2, 3]                       => 3
+ - reverse [1, 2, 3]                      => [3, 2, 1]
+ - sum [1 .. 5]                           => 15 -- 1 + 2 + 3 + 4 + 5
+ - product [1 .. 5]                       => 120 -- 1 * 2 * 3 * 4 * 5
+ - minimum [2, 5, 6, 2, 1, 2, 6, 0, 45]   => 0
+ - maximum [2, 5, 6, 2, 1, 2, 6, 0, 45]   => 45
+ - take 5 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] => [1, 2, 3, 4, 5]
+ - drop 5 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] => [6, 7, 8, 9, 10]
+
+
+Useful functions in the module Data.List
+ - Remove duplicates
+      nub [1, 1, 2, 3, 1, 5, 5, 1, 2, 5] => [1,2,3,5]
+
+ - Sort the elements of a list in ascending order
+      sort [5, 4 .. 1] => [1, 2, 3, 4, 5]
+
+ - The group function takes a list and returns a list of lists such that the concatenation of the result is equal to the argument.
+ Moreover, each sublist in the result contains only equal consecutive elements
+      group :: (Eq a) => [a] -> [[a]]
+      group "Mississippi" => ["M","i","ss","i","ss","i","pp","i"]
+
+ - replicate :: Int -> a -> [a]
+      replicate 5 10 -> [10,10,10,10,10]
+
+
+String - a list of characters. Functions are part of the module Data.Char
+ - type String = [Char]
+ - Convert a number to a string
+      show 15 == "15" == ['1', '5']
+ - Convert a string to a number
+      read "15" == 15
+ - Convert a character to a digit
+      digitToInt '5' -> 5 (part of Data.Char)
+
+
+List Comprehension - Another Way Of Constructing a List
+ - [1 .. 6]                                    => [1, 2, 3, 4, 5, 6]
+ - [1, 3 .. 6]                                 => [1, 3, 5]
+ - [ x + 10 | x <- [1 .. 6]]                   => [11, 12, 13, 14, 15, 16]
+ - [ x | x <- [1 .. 6], even x]                => [2, 4, 6]
+ - [ x | x <- [1 .. 6], mod x 3 == 0 && x > 3] => [6]
+
+
+Higher order functions:
+   Definition:
+      A function that accepts at least one function as a parameter and/or returns a function.
+
+
+Lambda function:
+   (\ x -> f x)
+
+ - map    (\ x -> x + 10)         [1 .. 6]     => [11, 12, 13, 14, 15, 16] (eqiv. map (+10) [1 .. 6])
+ - filter (\ x -> even x)         [1 .. 6]     => [2, 4, 6] (eqiv. filter even [1 .. 6])
+ - all    (\ x -> odd x)          [1 .. 6]     => False
+ - all    (\ x -> even x)         [2, 4, 6]    => True
+ - any    (\ x -> odd x)          [2, 4, 6]    => False
+ - any    (\ x -> mod x 10 == 0)  [20, 44, 61] => True
