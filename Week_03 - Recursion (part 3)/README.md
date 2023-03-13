@@ -123,6 +123,7 @@ Define a function that removes **the first** occurrence of a digit in a number b
 Test cases:
 
 ```haskell
+print $ removeFistOccurrence 110 1 == 10
 print $ removeFistOccurrence 15365 5 == 1536
 print $ removeFistOccurrence 15360 0 == 1536
 print $ removeFistOccurrence 15300 0 == 1530
